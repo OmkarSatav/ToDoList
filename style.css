@@ -66,3 +66,29 @@ body {
     bottom: 5%;
     right: 5%;
 }
+
+.notesSection {
+    width: 1000px;
+    height: 400px;
+    margin: 2% 2% 2% 10%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, auto);
+}
+
+.note {
+    background-color: #1b1b1b;
+    margin: 5%;
+    margin-right: 10px;
+    padding: 3%;
+    text-align: center;
+    border-radius: 7px;
+    /* width: fit-content; */
+    /* block-size: fit-content; */
+    /* float: left; */
+    box-shadow: 0 2px 5px #424242;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    /* word-wrap: break-word; */
+}
