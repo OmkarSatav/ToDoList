@@ -14,29 +14,9 @@
         <a href="#default" class="logo">ToDoList</a>
     </div>
     <br>
-    <div class="notesSection">
-        <div class="note">
-            Complete chapter 1 of DSBDA
-        </div>
-        <div class="note">
-            Complete chapter 1 of DSBDA
-        </div>
-        <div class="note">
-            Complete chapter 1 of DSBDA
-        </div>
-        <div class="note">
-            Complete chapter 1 of DSBDA
-        </div>
-        <div class="note">
-            Complete chapter 1 of DSBDA
-        </div>
-        <div class="note">
-            Complete chapter 1 of DSBDA
-        </div>
-        <div class="note">
-            Complete chapter 1 of DSBDA
+    <div id="notesSection">
 
-        </div>
+
     </div>
 
     <center>
@@ -44,19 +24,57 @@
             <table>
                 <tr> <textarea id="txtid" name="txtname" rows="5" cols="70" maxlength="150"></textarea></tr>
                 <tr>
-                    <td><input type="button" value="Cancel" id="cancelBtn"></td>
-                    <td><input type="button" value="Add" id="addBtn"></td>
+                    <td><input type="button" value="Cancel" id="cancelBtn" onclick="hideNoteForm()"></td>
+                    <td><input type="button" value="Add" id="addBtn" onclick="addMyNoteToSection()"></td>
                 </tr>
             </table>
 
         </div>
     </center>
 
-    <div id="addNote">
+    <!-- <div id="addNote">
         <span>+</span>
-    </div>
+    </div> -->
+
+    <button id="addNoteBtn" onclick="addMyNote()">+</button>
 </body>
 
-<script src="script.js"></script>
+<script type="text/javascript">
+    // alert("Hello Booy");
+    // console.log("hello World");
+    function addMyNote() {
+        console.log("clicked");
+        document.querySelector(".noteForm").style.display = "block";
+    }
+
+    function hideNoteForm() {
+        document.querySelector(".noteForm").style.display = "none";
+    }
+
+
+    function addMyNoteToSection() {
+        let str = document.getElementById("txtid").value;
+        console.log(str);
+
+        let divi = document.createElement("div");
+        divi.innerHTML = str;
+        divi.classList.add("note");
+        console.log(divi);
+
+        document.getElementById("notesSection").appendChild(divi);
+        document.querySelector(".noteForm").style.display = "none";
+
+    }
+    // document.getElementByID("addNoteBtn").click(function () {
+    //     console.log("clicked");
+    //     document.querySelector(".noteForm").style.display = "block";
+    // });
+
+    // addNote.addEventListener("click", function () {
+    //     console.log("clicked");
+    //     document.querySelector(".noteForm").style.display = "block";
+    // });
+
+</script>
 
 </html>
